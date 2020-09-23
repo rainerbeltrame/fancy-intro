@@ -1,0 +1,70 @@
+How to build this:
+
+1 - Choose the fonts on google fonts.
+    - We get the Heebo (weight 500 and 700) and Lobster fonts.
+
+2 - Adding the scripts what we use:
+    -Add a GSAP 3 script in the last body lines (find them with search on google like "GSAP 3 CDN").
+    -Add a script reference to javascript.
+
+3 - Import the CSS file on HTML and modify the Title.
+
+4 - Adding the "main" structure:
+    - Add section called "landing"
+    - Add a "nav" for nav bar
+    - H1 for logo called "Afloat"
+    - Unordered List (ul) called "nav-links"
+    - 3 menu bar options (li): "Home", "Contact" and "About"
+    - A H2 with "big-text" class what is called "Stay Afloat" for content of the section.
+
+5 - Adding an intro and intro-text div's (out of a landing class).
+    - Add a H1 with class "hide"
+        - Add a "text" class to span item called "Creating Inovation".
+    Copy this H1 2 more times. (name this with "For everyday" and "people.").
+
+6 - Add another class div called "slider" out of "intro".
+
+7 - Go to CSS for styles:
+    - Add the heebo font on "main".
+    - Stylize "landing" using 100vh min- height + put the "hero" img on background + cover the background + padding 0rem to top and bottom and 5rem to left and right.
+    - "nav" have a flex display + 10vh min height;
+    -"nav-links" have a flex display, with no style on the links.
+    - "li" have padding left of 5rem + size of font 1.2rem.
+    - Stylyze the logo using family, size and weight of the font.
+    - Stylyze "big-text" with absolute position, 30% top, 50% left, and after use the transform translate to -50% and -30%. Font size is 5rem, the family is Lobster cursive and the color is rgb with 61 in all range.
+    - The "intro" class need to have a black background, fixed position and 0 on top and left, width and height 100%.
+    - In "intro-text" we gonna add the white color with rgb, modify the font to "Heebo" and use 3rem of font-size.
+        Utilize the flex commands on the "intro" to align the words on center.
+    - Now we gonna stylyze the "slider" copying the intro styles, remove the display and change the background to baby blue.
+    - Move the slider down, using transform translateY in 100%, what gonna move down the slider now we use the javascript to pull this to top again.
+
+    8 - Javascript to animate the screen pull: (GSAP is the best animation library today).
+
+    - Creating the timeline: 
+    "const tl = gsap.timeline ({default: {ease: '.power1.out'}})"
+
+    - Now we need to move the "intro-text" down:
+        - We back to CSS and put a black background to the "hide" class.
+        - We need to use transform translateY in 100% on "span" inside the "hide" class.
+        - Now use display inline-block to "span" to move them down.
+        - To cover with a black background we need to use the overflow property on "hide" passing a "hidden" parameter.
+        - Now we use the ".to" on javascript to say to this what we want "to" animate: 
+        - tl.to(".text", { y: "0%", duration: 1, stagger: 0.25});
+            -The text is the selected item who we want to modify.
+            -The "y" is vertical axis what we want modify, 0% used change the value of transform in span from 100% to 0%. The duration indicates how ease is the transition, and de stagger separate all of those phrases.
+            -The same is applied to slider and intro, first to made blank page pull up and the second the page of all intro pull up to, with it aplied the website will appear normally. PS: Using the "-=1" made the intro page desappear with more speed, and with no delay compared to other.
+        -Now we gonna specify the starting point and ending point, using the "fromTo()" property in the 'nav': tl.fromTo('nav', {opacity: 0}, {opacity: 1, duration: 1});
+        - Use the same with "big-text" class.
+
+
+
+
+
+
+
+
+To do when finish:
+
+1 - Active the "nav-links".
+2 - 
+
